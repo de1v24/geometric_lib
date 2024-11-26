@@ -18,6 +18,12 @@ class TestCircle(unittest.TestCase):
 
         self.assertEqual(result, 0)
 
+    def test_area_negative(self):
+        radius = -1
+
+        with self.assertRaises(AssertionError):
+            area(radius)
+
     def test_perimeter(self):
         radius = 1
 
@@ -31,3 +37,9 @@ class TestCircle(unittest.TestCase):
         result = perimeter(radius)
 
         self.assertEqual(result, 0)
+
+    def test_perimeter_negative(self):
+        radius = -1
+
+        with self.assertRaises(AssertionError):
+            perimeter(radius)

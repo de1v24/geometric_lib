@@ -17,6 +17,12 @@ class TestSquare(unittest.TestCase):
 
         self.assertEqual(result, 0)
 
+    def test_area_negative(self):
+        side = -1
+
+        with self.assertRaises(AssertionError):
+            area(side)
+
     def test_perimeter(self):
         side = 1
 
@@ -30,3 +36,9 @@ class TestSquare(unittest.TestCase):
         result = perimeter(side)
 
         self.assertEqual(result, 0)
+
+    def test_perimeter_negative(self):
+        side = -1
+
+        with self.assertRaises(AssertionError):
+            perimeter(side)
